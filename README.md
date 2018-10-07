@@ -49,6 +49,7 @@ The ***include*** folder has 2 files:
 uint32_t pidrm_get_api_version();
 ```
 Get the API version.
+
 | Parameter    | Description                                    |
 |--------------|------------------------------------------------|
 | Return value | Version of the API as an unsigned 32bit value. |
@@ -58,6 +59,7 @@ Get the API version.
 uint8_t pidrm_init(uint8_t *com_name);
 ```
 Initialize PiDRM software and hardware.
+
 |Parameter   |Description                                                                                                                              |
 |------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 |com_name    |ASCII string that contains the name of the used serial port. If you use the default gpio header's UART, you can pass *NULL* as parameter.|
@@ -68,6 +70,7 @@ Initialize PiDRM software and hardware.
 uint8_t pidrm_deinit();
 ```
 Deinitialize PiDRM software and hardware.
+
 |Parameter   |Description                                      |
 |------------|-------------------------------------------------|
 |Return value|In case of something fails returns 0, otherwise 1|
@@ -77,6 +80,7 @@ Deinitialize PiDRM software and hardware.
 uint8_t pidrm_get_id(CALLBACKGETID _callbackgetid, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Get the ID of the used PiDRM device.
+
 |Parameter     |Description                                                                                                                                                      |                                                                                                                                                    |
 |--------------|-------------                                                                                                                                                    |
 |_callbackgetid|This callback is called when the ID query is successful, and the parameters that are passed to the callback contain the IDs                                      |
@@ -89,6 +93,7 @@ Get the ID of the used PiDRM device.
 uint8_t pidrm_reset_keys(CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Regenerate DRM keys(private,public), clears the read out protection bit.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbacksuccess|Called when the operation is successful                                                                                                                          |
@@ -101,6 +106,7 @@ Regenerate DRM keys(private,public), clears the read out protection bit.
 uint8_t pidrm_public_key_read_protect(CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Enable DRM public key read out protection.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|                                                                                                                                                 |
 |_callbacksuccess|Called when the operation is successful                                                                                                                          |
@@ -113,6 +119,7 @@ Enable DRM public key read out protection.
 uint8_t pidrm_get_public_key(CALLBACKDATA _callbackdata, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Read DRM public key if read out is not disabled.
+
 |Parameter     |Description                                                                                                                                                      |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbackdata |This callback called when the public key query is successful, and the parameters that this callback have contains the public key                                 |
@@ -125,6 +132,7 @@ Read DRM public key if read out is not disabled.
 uint8_t pidrm_set_public_key(CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, uint8_t *public_key, int32_t timeout);
 ```
 Set DRM public key in the API. You have to set the key with this function before running checks.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbacksuccess|Called when the operation is successful                                                                                                                          |
@@ -138,6 +146,7 @@ Set DRM public key in the API. You have to set the key with this function before
 uint8_t pidrm_check(CALLBACKGENUINE _callbackgenuine, CALLBACKFAKE _callbackfake, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Run single DRM check.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbackgenuine|Called when genuine device is detected                                                                                                                           |
@@ -150,6 +159,7 @@ Run single DRM check.
 uint8_t pidrm_check_periodic_start(CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, CALLBACKGENUINE _callbackgenuine, CALLBACKFAKE _callbackfake, uint16_t period, int32_t timeout);
 ```
 Start periodic DRM check.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbacksuccess|Called when the periodic check started successfully                                                                                                              |
@@ -165,6 +175,7 @@ Start periodic DRM check.
 uint8_t pidrm_check_periodic_stop(CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Stop the period DRM check.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-------------                                                                                                                                                    |
 |_callbacksuccess|Called when the periodic check stopped successfully                                                                                                              |
@@ -177,6 +188,7 @@ Stop the period DRM check.
 uint8_t pidrm_group_reset_keys(CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Regenerate Group DRM keys(private,public), clears the read out protection bit.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbacksuccess|Called when the operation is successful                                                                                                                          |
@@ -189,6 +201,7 @@ Regenerate Group DRM keys(private,public), clears the read out protection bit.
 uint8_t pidrm_group_get_private_key(CALLBACKDATA _callbackdata, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Read out Group DRM private key if read out protection is not enabled.
+
 |Parameter     |                                                                                                                                                                 |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbackdata |This callback is called when the private key query is successful, and the parameters of the callback contains the private key                                    |
@@ -200,6 +213,7 @@ Read out Group DRM private key if read out protection is not enabled.
 uint8_t pidrm_group_set_private_key(CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, uint8_t *private_key, int32_t timeout);
 ```
 Set Group DRM private key in the hardware.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbacksuccess|Called when the operation is successful                                                                                                                          |
@@ -214,6 +228,7 @@ Set Group DRM private key in the hardware.
 uint8_t pidrm_group_private_key_read_protect(CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Enable read out protection for Group DRM private key.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbacksuccess|Called when the operation is successful                                                                                                                          |
@@ -226,6 +241,7 @@ Enable read out protection for Group DRM private key.
 uint8_t pidrm_group_private_key_write_protect(CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Enable write protection for Group DRM private key.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbacksuccess|Called when the operation is successful                                                                                                                          |
@@ -238,6 +254,7 @@ Enable write protection for Group DRM private key.
 uint8_t pidrm_group_get_public_key(CALLBACKDATA _callbackdata, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Read Group DRM public key if read out protection is not enabled.
+
 |Parameter     |Description                                                                                                                                                      |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbackdata |This callback is called when the public key query is successful, and the parameters of the callback contains the public key                                      |
@@ -250,6 +267,7 @@ Read Group DRM public key if read out protection is not enabled.
 uint8_t pidrm_group_public_key_read_protect(CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Enable read out protection for Group DRM public key.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbacksuccess|Called when the operation is successful                                                                                                                          |
@@ -261,6 +279,7 @@ Enable read out protection for Group DRM public key.
 uint8_t pidrm_group_set_public_key(CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, uint8_t * public_key, int32_t timeout);
 ```
 Set DRM Group public key in the API. You have to set the key using this function before running any checks.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbacksuccess|Called when the operation is successful                                                                                                                          |
@@ -274,6 +293,7 @@ Set DRM Group public key in the API. You have to set the key using this function
 uint8_t pidrm_group_check(CALLBACKGENUINE _callbackgenuine, CALLBACKFAKE _callbackfake, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Run single Group DRM check.
+
 |Parameter |Description                                                                                                                                                            |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbackgenuine|Called when genuine device is detected                                                                                                                           |
@@ -286,6 +306,7 @@ Run single Group DRM check.
 uint8_t pidrm_group_check_periodic_start(CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, CALLBACKGENUINE _callbackgenuine, CALLBACKFAKE _callbackfake, uint16_t period, int32_t timeout);
 ```
 Start periodic Group DRM checks.
+
 |Parameter| Description                                                                                                                                                            |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbacksuccess|Called when the periodic checks started successfully                                                                                                             |
@@ -300,6 +321,7 @@ Start periodic Group DRM checks.
 uint8_t pidrm_group_check_periodic_stop(CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Stop periodic Group DRM checks.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbacksuccess|Called when the periodic checks stopped successfully                                                                                                             |
@@ -311,6 +333,7 @@ Stop periodic Group DRM checks.
 uint8_t pidrm_aes_block_generate(uint8_t ch, CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Reset AES channel(new key, new IV, protections disabled).
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |ch              |Channel number: 0-3                                                                                                                                              |
@@ -324,6 +347,7 @@ Reset AES channel(new key, new IV, protections disabled).
 uint8_t pidrm_aes_block_key_set(uint8_t ch, uint8_t *key, CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Set the key of an AES channel.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |ch              |Channel number: 0-3                                                                                                                                              |
@@ -338,6 +362,7 @@ Set the key of an AES channel.
 uint8_t pidrm_aes_block_key_get(uint8_t ch, CALLBACKDATA _callbackdata, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Read the key of an AES channel.
+
 |Parameter     |Description                                                                                                                                                        |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |ch            |Channel number: 0-3                                                                                                                                                |
@@ -351,6 +376,7 @@ Read the key of an AES channel.
 uint8_t pidrm_aes_block_key_disable_read(uint8_t ch, CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Enable read out protection of an AES channel key.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |ch              |Channel number: 0-3                                                                                                                                              |
@@ -365,6 +391,7 @@ Enable read out protection of an AES channel key.
 uint8_t pidrm_aes_block_key_disable_write(uint8_t ch, CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Enable the write protection of an AES channel key.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |ch              |Channel number: 0-3                                                                                                                                              |
@@ -375,9 +402,10 @@ Enable the write protection of an AES channel key.
 
 ------
 ```
-Generate new new IV for an AES Channel.
-```
 uint8_t pidrm_aes_block_iv_generate(uint8_t ch, CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, int32_t timeout);
+```
+Generate new new IV for an AES Channel.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |ch              |Channel number: 0-3                                                                                                                                              |
@@ -391,6 +419,7 @@ uint8_t pidrm_aes_block_iv_generate(uint8_t ch, CALLBACKSUCCESS _callbacksuccess
 uint8_t pidrm_aes_block_iv_set(uint8_t ch, uint8_t *iv, CALLBACKSUCCESS _callbacksuccess, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Set the IV of an AES channel.
+
 |Parameter       |Description                                                                                                                                                      |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |ch              |Channel number: 0-3                                                                                                                                              |
@@ -405,6 +434,7 @@ Set the IV of an AES channel.
 uint8_t pidrm_aes_block_iv_get(uint8_t ch, CALLBACKDATA _callbackdata, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Read the IV of an AES channel.
+
 |Parameter     |Description                                                                                                                                                      |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |ch            |Channel number: 0-3                                                                                                                                              |
@@ -418,6 +448,7 @@ Read the IV of an AES channel.
 uint8_t pidrm_aes_block_encrypt(uint8_t ch, uint8_t *plain_text, uint16_t length, CALLBACKDATA _callbackdata, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 Encrypt data with AES Channel. It is strongly recommended to use 16 byte aligned data due to AES block size. The maximum input size is 32 kByte.
+
 |Parameter     |Description                                                                                                                                                      |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |ch            |Channel number: 0-3                                                                                                                                              |
@@ -432,6 +463,7 @@ Encrypt data with AES Channel. It is strongly recommended to use 16 byte aligned
 uint8_t pidrm_aes_block_decrypt(uint8_t ch, uint8_t *ciper_text, uint16_t length, CALLBACKDATA _callbackdata, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
 |Decrypt data with AES Channel. You can only decrypt data that is 16 byte aligned. The maximum input size is 32 kByte.
+
 |Parameter     |Description                                                                                                                                                      |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |ch            |Channel number: 0-3                                                                                                                                              |
