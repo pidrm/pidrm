@@ -81,7 +81,7 @@ uint8_t pidrm_get_id(CALLBACKGETID _callbackgetid, CALLBACKERROR _callbackerror,
 ```
 Get the ID of the used PiDRM device.
 
-|Parameter     |Description                                                                                                                                                      |                                                                                                                                                    |
+|Parameter     |Description                                                                                                                                                      |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbackgetid|This callback is called when the ID query is successful, and the parameters that are passed to the callback contain the IDs                                      |
 |_callbackerror|This callback is called when an error occured                                                                                                                    |
@@ -108,7 +108,7 @@ uint8_t pidrm_public_key_read_protect(CALLBACKSUCCESS _callbacksuccess, CALLBACK
 Enable DRM public key read out protection.
 
 |Parameter       |Description                                                                                                                                                      |
-|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|                                                                                                                                                 |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbacksuccess|Called when the operation is successful                                                                                                                          |
 |_callbackerror  |Called when error occured                                                                                                                                        |
 |timeout         |This timeout controls how long the API should wait for the start of the transaction before it gives up. -1:forever,  0:try,greater than 0 : given in milliseconds|
