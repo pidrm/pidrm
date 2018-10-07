@@ -82,7 +82,7 @@ uint8_t pidrm_get_id(CALLBACKGETID _callbackgetid, CALLBACKERROR _callbackerror,
 Get the ID of the used PiDRM device.
 
 |Parameter     |Description                                                                                                                                                      |                                                                                                                                                    |
-|--------------|-------------                                                                                                                                                    |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |_callbackgetid|This callback is called when the ID query is successful, and the parameters that are passed to the callback contain the IDs                                      |
 |_callbackerror|This callback is called when an error occured                                                                                                                    |
 |timeout       |This timeout controls how long the API should wait for the start of the transaction before it gives up. -1:forever,  0:try,greater than 0 : given in milliseconds|
