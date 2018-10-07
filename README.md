@@ -49,9 +49,9 @@ The ***include*** folder has 2 files:
 uint32_t pidrm_get_api_version();
 ```
 Get the API version.
-|Parameter   |Description                                   |
-|------------|----------------------------------------------|
-|Return value|Version of the API as an unsigned 32bit value.|
+| Parameter    | Description                                    |
+|--------------|------------------------------------------------|
+| Return value | Version of the API as an unsigned 32bit value. |
 
 ------
 ```
