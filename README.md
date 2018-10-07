@@ -462,7 +462,7 @@ Encrypt data with AES Channel. It is strongly recommended to use 16 byte aligned
 ```
 uint8_t pidrm_aes_block_decrypt(uint8_t ch, uint8_t *ciper_text, uint16_t length, CALLBACKDATA _callbackdata, CALLBACKERROR _callbackerror, int32_t timeout);
 ```
-|Decrypt data with AES Channel. You can only decrypt data that is 16 byte aligned. The maximum input size is 32 kByte.
+Decrypt data with AES Channel. You can only decrypt data that is 16 byte aligned. The maximum input size is 32 kByte.
 
 |Parameter     |Description                                                                                                                                                      |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
